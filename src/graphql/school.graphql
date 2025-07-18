@@ -1,0 +1,110 @@
+# =====================
+# 🚀 STUDENT
+# =====================
+
+# Add a student
+mutation AddStudent {
+  addStudent(name: "Alice", age: 16, grade: "10th") {
+    id
+    name
+    age
+    grade
+  }
+}
+
+# Get all students
+query GetStudents {
+  students {
+    id
+    name
+    age
+    grade
+  }
+}
+
+# =====================
+# 🚀 TEACHER
+# =====================
+
+# Add a teacher
+mutation AddTeacher {
+  addTeacher(name: "Mr. Khan", subject: "Math") {
+    id
+    name
+    subject
+  }
+}
+
+# Get all teachers
+query GetTeachers {
+  teachers {
+    id
+    name
+    subject
+  }
+}
+
+# =====================
+# 🚀 COURSE
+# =====================
+
+# Add a course
+mutation AddCourse {
+  addCourse(name: "Algebra I", teacherId: "REPLACE_WITH_TEACHER_ID") {
+    id
+    name
+    teacher {
+      id
+      name
+      subject
+    }
+  }
+}
+
+# Get all courses
+query GetCourses {
+  courses {
+    id
+    name
+    teacher {
+      id
+      name
+    }
+  }
+}
+
+# =====================
+# 🚀 CLASSROOM
+# =====================
+
+# Add a classroom
+mutation AddClassroom {
+  addClassroom(name: "10-A", teacherId: "REPLACE_WITH_TEACHER_ID") {
+    id
+    name
+    teacher {
+      id
+      name
+    }
+    students {
+      id
+      name
+    }
+  }
+}
+
+# Get all classrooms
+query GetClassrooms {
+  classrooms {
+    id
+    name
+    teacher {
+      id
+      name
+    }
+    students {
+      id
+      name
+    }
+  }
+}
